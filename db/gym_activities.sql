@@ -15,8 +15,9 @@ CREATE TABLE activities(
   id SERIAL8 PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   instructor VARCHAR(255) NOT NULL,
-  day VARCHAR(255) NOT NULL,
-  start_time NUMBER NOT NULL
+  day DATE(mm/dd),
+  start_time TIME(hh:mm) DEFAULT 16:00,
+  capacity DEFAULT 0,
 );
 
 CREATE TABLE bookings(
