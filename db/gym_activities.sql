@@ -17,7 +17,7 @@ CREATE TABLE activities
   id SERIAL8 PRIMARY KEY,
   activity VARCHAR(255) NOT NULL,
   instructor VARCHAR(255) NOT NULL,
-  day DATE NOT NULL,
+  day VARCHAR(255) NOT NULL,
   start_time TIME NOT NULL,
   capacity INT8 DEFAULT 0
 );

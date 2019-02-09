@@ -1,6 +1,6 @@
 require_relative( '../db/sql_runner' )
 
-class Activities
+class Activity
 
   attr_reader :id
   attr_accessor :activity, :instructor, :day, :start_time, :capacity
