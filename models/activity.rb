@@ -14,6 +14,20 @@ class Activity
     @capacity = options['capacity']
   end
 
+  def members()
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.activity_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |member| Member.new(member) }
+  end
+
+  # def zombies()
+  #   sql = "SELECT z.* FROM zombies z INNER JOIN bitings b ON b.zombie_id = z.id WHERE b.victim_id = $1;"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   return results.map { |zombie| Zombie.new(zombie) }
+  # end
+
   def save()
     sql = "INSERT INTO activities
     (

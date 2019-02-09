@@ -42,5 +42,17 @@ activity2 = Activity.new({
 })
 activity2.save()
 
+booking1 = Booking.new({
+  "member_id" => member1.id,
+  "activity_id" => activity1.id
+})
+booking1.save()
+
+booking2 = Booking.new({
+  "member_id" => member2.id,
+  "activity_id" => activity2.id
+})
+booking2.save()
+
 binding.pry
 nil
