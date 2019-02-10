@@ -18,15 +18,16 @@ class Member
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
   end
 
-  # def activities()
-  #   sql = "SELECT activities.*
-  #   FROM activities INNER JOIN bookings
-  #   ON bookings.activity_id = activities.id
-  #   WHERE bookings.members_id = $1;"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql, values)
-  #   return results.map { |activity| Activity.new(activity) }
-  # end
+  def activities()
+    sql = "SELECT activities.*
+    FROM activities
+    INNER JOIN bookings
+    ON bookings.activity_id = activities.id
+    WHERE bookings.member_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |activity| Activity.new(activity) }
+  end
 
   def save()
     sql = "INSERT INTO members

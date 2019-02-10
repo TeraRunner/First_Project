@@ -15,7 +15,8 @@ class Activity
   end
 
   def members()
-    sql = "SELECT members.* FROM members
+    sql = "SELECT members.*
+    FROM members
     INNER JOIN bookings
     ON bookings.member_id = members.id
     WHERE bookings.activity_id = $1"
