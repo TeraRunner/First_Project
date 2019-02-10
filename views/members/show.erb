@@ -1,0 +1,19 @@
+<h1>Member</h1>
+
+<ul>
+  <li>Name: <%= @member.full_name %></li>
+  <li>Age: <%= @member.age %></li>
+  <li>Address: <%= @member.address %></li>
+  <li>  Email: <%= @member.email %></li>
+</ul>
+
+<h1>Activities:</h1>
+
+<ul>
+  <% @member.activities.each do |activity| %>
+  <li>Activiy: <%= activity.activity %></li>
+  <li>instructor: <%= activity.instructor %></li>
+  <li>Day: <%= activity.day %></li>
+  <li>Time: <%= activity.start_time %></li>
+  <% end %>
+</ul>
