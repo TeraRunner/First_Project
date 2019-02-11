@@ -1,0 +1,33 @@
+<h1>Edit activity: <%= @activity.activity %></h1>
+
+<form method="post" action="/activities/<%= @activity.id %>">
+
+  <div>
+    <label for="activity">Activity:</label>
+    <input type="text" name="activity" id="activity" value="<%= @activity.activity %>"/>
+  </div>
+
+  <div>
+    <label for="instructor">Instructor:</label>
+    <input type="text" name="instructor" id="instructor" value="<%= @activity.instructor %>"/>
+  </div>
+
+  <div>
+    <label for="day">Day/s:</label>
+    <input type="text" name="day" id="day" value="<%= @activity.day %>"/>
+  </div>
+
+  <div>
+    <label for="start_time">Start time:</label>
+    <input type="text" name="start_time" id="start_time" value="<%= @activity.activity %>"/>
+
+  <div>
+    <label for="capacity">Capacity:</label>
+    <input type="text" name="capacity" id="capacity" value="<%= @activity.capacity %>"/>
+  </div>
+
+  <div>
+    <input type="submit" value="Update details"/>
+  </div>
+
+</form>

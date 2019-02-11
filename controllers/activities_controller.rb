@@ -32,11 +32,11 @@ end
 post '/activities/:id' do
   @activity = Activity.new(params)
   @activity.update
-  redirect to ("/activites/#{params['id']}")
+  redirect to ("/activities/#{params['id']}")
 end
 
 post '/activities/:id/delete' do
   @activity = Activity.find(params[:id])
   @activity.delete()
-  redirect to("/activities")
+  redirect to ("/activities")
 end

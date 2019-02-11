@@ -27,7 +27,7 @@ member2.save()
 activity1 = Activity.new({
   "activity" => "Yoga",
   "instructor" => "Bob",
-  "day" => "Monday",
+  "day" => "Mondays",
   "start_time" => "16:00",
   "capacity" => "0"
 })
@@ -36,7 +36,7 @@ activity1.save()
 activity2 = Activity.new({
   "activity" => "Cycling",
   "instructor" => "Brenda",
-  "day" => "Tuesday",
+  "day" => "Tuesdays",
   "start_time" => "18:00",
   "capacity" => "0"
 })

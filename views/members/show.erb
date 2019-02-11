@@ -1,6 +1,9 @@
 <h1>Member</h1>
 
 <a href="/members/<%= @member.id %>/edit">Update details</a>
+<form action="/members/<%= @member.id %>/delete" method="post">
+  <input type="submit" value="Delete member" />
+</form>
 
 <ul>
   <li>Name: <%= @member.full_name %></li>
@@ -19,7 +22,3 @@
   <li>Time: <%= activity.start_time %></li>
   <% end %>
 </ul>
-
-<form action="/members/<%= @member.id %>/delete" method="post">
-  <input type="submit" value="Delete member" />
-</form>

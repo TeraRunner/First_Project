@@ -7,7 +7,7 @@ CREATE TABLE members
   id SERIAL8 PRIMARY KEY,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
-  age INT8 NOT NULL,
+  age NUMERIC NOT NULL,
   address TEXT NOT NULL,
   email VARCHAR(255) NOT NULL
 );
@@ -19,7 +19,7 @@ CREATE TABLE activities
   instructor VARCHAR(255) NOT NULL,
   day VARCHAR(255) NOT NULL,
   start_time TIME NOT NULL,
-  capacity INT8 DEFAULT 0
+  capacity NUMERIC DEFAULT(0)
 );
 
 CREATE TABLE bookings

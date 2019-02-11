@@ -45,20 +45,20 @@ class Activity
   end
 
   def update()
-    sql = "UPDATE activities
-    SET
-    (
-      activity,
-      instructor,
-      day,
-      start_time,
-      capacity
-    ) =
-    (
-      $1, $2, $3, $4, $5
-    )
-    WHERE id = $6"
-    values = [@activity, @instructor, @day, @start_time, @capacity]
+      sql = "UPDATE activities
+      SET
+      (
+        activity,
+        instructor,
+        day,
+        start_time,
+        capacity
+      ) =
+      (
+        $1, $2, $3, $4, $5
+      )
+      WHERE id = $6"
+    values = [@activity, @instructor, @day, @start_time, @capacity, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -81,10 +81,10 @@ class Activity
     SqlRunner.run( sql )
   end
 
-  def self.delete(id)
+  def delete
     sql = "DELETE FROM activities
     WHERE id = $1"
-    values = [id]
+    values = [@id]
     SqlRunner.run( sql, values )
   end
 
