@@ -1,0 +1,25 @@
+<h1>Activity</h1>
+
+<a href="/activities/<%= @activity.id %>/edit">Update activity</a>
+<form action="/activities/<%= @activity.id %>/delete" method="post">
+  <input type="submit" value="Delete activity" />
+</form>
+
+<ul>
+  <li>Activity: <%= @activity.activity %></li>
+  <li>Instructor: <%= @activity.instructor %></li>
+  <li>Day/s: <%= @activity.day %></li>
+  <li>Start time: <%= @activity.start_time %></li>
+  <li>Capacity: <%= @activity.capacity %>/30</li>
+</ul>
+
+<h1>Members:</h1>
+
+<ul>
+  <% @activity.members.each do |member| %>
+  <li>Name: <%= member.full_name %></li>
+  <li>Age: <%= member.age %></li>
+  <li>Address: <%= member.address %></li>
+  <li>Email: <%= member.email %></li>
+  <% end %>
+</ul>

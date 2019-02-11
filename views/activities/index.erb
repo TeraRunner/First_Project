@@ -1,0 +1,34 @@
+<h1>Activities</h1>
+
+<p>
+  <a href="/new">Add activity</a>
+</p>
+
+<table>
+  <tr>
+    <th>Activity name</th>
+    <th></th>
+    <th>Instructor</th>
+    <th></th>
+    <th>Day/s</th>
+    <th></th>
+    <th>Start time</th>
+    <th></th>
+    <th>Capacity</th>
+    <th></th>
+  </tr>
+  <% for activity in @activities %>
+  <tr>
+    <td><a href="/activities/<%= activity.id %>"><%= activity.activity %></a></td>
+    <td>|</td>
+    <td><%= activity.instructor %></td>
+    <td>|</td>
+    <td><%= activity.day %></td>
+    <td>|</td>
+    <td><%= activity.start_time %></td>
+    <td>|</td>
+    <td><%= activity.capacity %>/30</td>
+    <td>|</td>
+  </tr>
+  <% end %>
+</table>

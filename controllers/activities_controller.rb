@@ -8,11 +8,6 @@ get '/activities' do
   erb (:"activities/index")
 end
 
-get '/activities/:id' do
-  @activity = Activity.find(params['id'].to_i)
-  erb(:"activities/show")
-end
-
 get '/activities/new' do
   @activities = Activity.all
   erb(:"activities/new")
@@ -24,7 +19,24 @@ post '/activities' do
   redirect to("/activities")
 end
 
+get '/activities/:id' do
+  @activity = Activity.find(params['id'].to_i)
+  erb(:"activities/show")
+end
+
+get '/activities/:id/edit' do
+  @activity = Activity.find(params['id'].to_i)
+  erb(:"activities/edit")
+end
+
+post '/activities/:id' do
+  @activity = Activity.new(params)
+  @activity.update
+  redirect to ("/activites/#{params['id']}")
+end
+
 post '/activities/:id/delete' do
-  Activity.destroy(params[:id])
+  @activity = Activity.find(params[:id])
+  @activity.delete()
   redirect to("/activities")
 end
