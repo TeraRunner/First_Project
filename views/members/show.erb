@@ -19,3 +19,7 @@
   <li>Time: <%= activity.start_time %></li>
   <% end %>
 </ul>
+
+<form action="/members/<%= @member.id %>/delete" method="post">
+  <input type="submit" value="Delete member" />
+</form>

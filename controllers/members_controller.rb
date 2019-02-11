@@ -33,11 +33,11 @@ end
 post '/members/:id' do
   @member = Member.new(params)
   @member.update
-  redirect to "/members/#{params['id']}"
+  redirect to ("/members/#{params['id']}")
 end
 
 post '/members/:id/delete' do
-  @member = Member.find(params['id'])
-  @member.delete
-  redirect to '/students'
+  @member = Member.find(params[:id])
+  @member.delete()
+  redirect to ("/members")
 end
