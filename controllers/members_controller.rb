@@ -1,6 +1,8 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/member.rb' )
+require_relative( '../models/activity.rb' )
+require_relative( '../models/booking.rb')
 also_reload( '../models/*' )
 
 get '/members' do
@@ -23,11 +25,19 @@ get '/members/:id' do
   erb(:"members/show")
 end
 
-# get '/members/:id/edit' do
-# end
-#
-# post '/members/:id' do
-# end
+get '/members/:id/edit' do
+  @member = Member.find(params['id'].to_i)
+  erb(:"members/edit")
+end
 
-# post '/members/:id/delete' do
-# end
+post '/members/:id' do
+  @member = Member.new(params)
+  @member.update
+  redirect to "/members/#{params['id']}"
+end
+
+post '/members/:id/delete' do
+  @member = Member.find(params['id'])
+  @member.delete
+  redirect to '/students'
+end
