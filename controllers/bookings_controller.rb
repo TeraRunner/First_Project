@@ -8,13 +8,9 @@ get '/bookings' do
   erb(:"bookings/index")
 end
 
-get '/bookings/:id' do
-  @booking = Booking.find(params['id'].to_i)
-  erb(:"bookings/show")
-end
-
 get '/bookings/new' do
-  @bookings = Booking.all
+  @members = Member.all
+  @activities = Activity.all
   erb(:"bookings/new")
 end
 
@@ -24,7 +20,8 @@ post '/bookings' do
   redirect to("/bookings")
 end
 
-post '/bookings/:id/delete' do
-  Booking.destroy(params[:id])
+post '/bitings/:id/delete' do
+  @booking = Booking.find(params[:id])
+  @booking.delete
   redirect to("/bookings")
 end
