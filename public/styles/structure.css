@@ -1,0 +1,12 @@
+body {
+  background: white url('/images/gym_background.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 0px;
+  margin: 100px 100px 0px;
+}
+
+a {
+  color: white;
+}
