@@ -8,28 +8,28 @@
 <main>
   <div class="flex-container">
     <div>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/members">Members</a>
-          </li>
-          <li>
-            <a href="/activities">Activities</a>
-          </li>
-          <li>
-            <a href="/bookings">Bookings</a>
-          </li>
-        </ul>
-      </nav>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/members">Members</a>
+        </li>
+        <li>
+          <a href="/activities">Activities</a>
+        </li>
+        <li>
+          <a href="/bookings">Bookings</a>
+        </li>
+      </ul>
+    </nav>
     </div>
-  </div>
-  <div>
-    <section id="content">
-      <%= yield %>
-    </section>
+    <div>
+      <section class="content" id="content">
+        <%= yield %>
+      </section>
+    </div>
   </div>
 </main>
 </body>

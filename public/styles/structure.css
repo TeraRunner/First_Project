@@ -3,8 +3,8 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   color: white;
-  padding: 0px;
-  margin: 100px 100px 0px;
+  height: 1600;
+  width: 1600;
 }
 
 a {
@@ -16,7 +16,6 @@ h1 {
   text-align: center;
   border: 5px solid white;
   background: black;
-  margin: 10px 10px 10px;
 }
 
 ul {
@@ -25,19 +24,30 @@ ul {
   text-transform: uppercase;
   border: 5px solid white;
   background: black;
+}
+
+nav {
   margin: 10px 10px 10px;
+}
+
+table, form {
+  text-align: center;
+  text-transform: uppercase;
+  border: 5px solid white;
+  background: black;
 }
 
 .flex-container {
   display: flex;
-  flex-direction: row;
-  margin: 10px 10px 10px;
-  flex-wrap: wrap;
+  flex-flow: wrap;
 }
 
 .center {
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.content {
 }
