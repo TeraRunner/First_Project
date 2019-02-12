@@ -1,6 +1,8 @@
 <h1>Activity</h1>
 
-<a href="/activities/<%= @activity.id %>/edit">Update activity</a>
+<form action="/activities/<%= @activity.id %>/edit" method="get">
+  <input type="submit" value="Update activity" />
+</form>
 <form action="/activities/<%= @activity.id %>/delete" method="post">
   <input type="submit" value="Delete activity" />
 </form>

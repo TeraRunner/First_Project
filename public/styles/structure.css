@@ -10,3 +10,34 @@ body {
 a {
   color: white;
 }
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  border: 5px solid white;
+  background: black;
+  margin: 10px 10px 10px;
+}
+
+ul {
+  font-size: 16px;
+  text-align: left;
+  text-transform: uppercase;
+  border: 5px solid white;
+  background: black;
+  margin: 10px 10px 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 10px 10px;
+  flex-wrap: wrap;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
