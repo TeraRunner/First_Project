@@ -48,7 +48,7 @@ activity1 = Activity.new({
   "instructor" => "Bob",
   "day" => "Mondays",
   "start_time" => "16:00",
-  "capacity" => "0"
+  "capacity" => "5"
 })
 activity1.save()
 
@@ -57,7 +57,7 @@ activity2 = Activity.new({
   "instructor" => "Brenda",
   "day" => "Tuesdays",
   "start_time" => "18:00",
-  "capacity" => "0"
+  "capacity" => "5"
 })
 activity2.save()
 
@@ -66,7 +66,7 @@ booking1 = Booking.new({
   "activity_id" => activity1.id
 })
 booking1.save()
-activity1.capacity += 1
+activity1.decrease_capacity()
 activity1.update
 
 booking2 = Booking.new({
@@ -74,7 +74,7 @@ booking2 = Booking.new({
   "activity_id" => activity2.id
 })
 booking2.save()
-activity2.capacity += 1
+activity2.decrease_capacity()
 activity2.update
 
 binding.pry

@@ -19,7 +19,7 @@ CREATE TABLE activities
   instructor VARCHAR(255) NOT NULL,
   day VARCHAR(255) NOT NULL,
   start_time TIME NOT NULL,
-  capacity NUMERIC DEFAULT(0)
+  capacity NUMERIC DEFAULT(5)
 );
 
 CREATE TABLE bookings

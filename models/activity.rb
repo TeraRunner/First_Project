@@ -76,6 +76,14 @@ class Activity
     return Activity.new( results.first )
   end
 
+  def spare_capacity()
+    @capacity -= self.members.length
+  end
+
+  def decrease_capacity()
+    @capacity -= 1
+  end
+
   def self.delete_all
     sql = "DELETE FROM activities"
     SqlRunner.run( sql )

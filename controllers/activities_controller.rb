@@ -14,8 +14,8 @@ get '/activities/new' do
 end
 
 post '/activities' do
-  activity = Activity.new(params)
-  activity.save
+  @activity = Activity.new(params)
+  @activity.save
   redirect to("/activities")
 end
 
