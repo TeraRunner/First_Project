@@ -5,6 +5,7 @@ require("pry-byebug")
 
 Member.delete_all()
 Activity.delete_all()
+Booking.delete_all()
 
 member1 = Member.new({
   "first_name" => "Paquito",
@@ -23,6 +24,24 @@ member2 = Member.new({
   "email" => "mary_olsen@hotmail.com"
 })
 member2.save()
+
+member3 = Member.new({
+  "first_name" => "Antonio",
+  "last_name" => "Franco Sanchez",
+  "age" => "55",
+  "address" => "C/ Gardenia 6",
+  "email" => "antonio_el_del_polvero@hotmail.es"
+})
+member3.save()
+
+member4 = Member.new({
+  "first_name" => "Josefa",
+  "last_name" => "Sanchez Gutierrez",
+  "age" => "54",
+  "address" => "C/ San Claudio 107",
+  "email" => "la_pepa@hotmail.es"
+})
+member4.save()
 
 activity1 = Activity.new({
   "activity" => "Yoga",
@@ -47,12 +66,16 @@ booking1 = Booking.new({
   "activity_id" => activity1.id
 })
 booking1.save()
+activity1.capacity += 1
+activity1.update
 
 booking2 = Booking.new({
   "member_id" => member2.id,
   "activity_id" => activity2.id
 })
 booking2.save()
+activity2.capacity += 1
+activity2.update
 
 binding.pry
 nil

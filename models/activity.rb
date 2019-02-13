@@ -11,7 +11,7 @@ class Activity
     @instructor = options['instructor']
     @day = options['day']
     @start_time = options['start_time']
-    @capacity = options['capacity']
+    @capacity = options['capacity'].to_i
   end
 
   def members()

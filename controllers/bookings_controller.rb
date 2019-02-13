@@ -17,10 +17,10 @@ end
 post '/bookings' do
   booking = Booking.new(params)
   booking.save
-  redirect to("/bookings")
+  redirect to("/activities")
 end
 
-post '/bitings/:id/delete' do
+post '/bookings/:id/delete' do
   @booking = Booking.find(params[:id])
   @booking.delete
   redirect to("/bookings")
